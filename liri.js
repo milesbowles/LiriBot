@@ -59,12 +59,11 @@ var getMovie = function (movieName) {
             console.log('Year: ' + jsonData.Year);
             console.log('Rated: ' + jsonData.Rated);
             console.log('IMDB Rating: ' + jsonData.imdbRating);
+            console.log('Rotten Tomatoes Rating: ' + jsonData.tomatoRating);
             console.log('Country: ' + jsonData.Country);
             console.log('Language: ' + jsonData.Language);
             console.log('Plot: ' + jsonData.Plot);
             console.log('Actors: ' + jsonData.Actors);
-            console.log('Rotten tomatoes rating: ' + jsonData.tomatoRating);
-            console.log('Rotten tomatoes URL: ' + jsonData.tomatoURL)
         }
     })
 };
@@ -94,6 +93,10 @@ var options = function (option, data) {
             break;
         case 'movie-this':
             getMovie(data);
+            break;
+        case 'do-what-it-says':
+            readFileData();
+            break;
         default:
         console.log('Not sure what you want...')
     }
